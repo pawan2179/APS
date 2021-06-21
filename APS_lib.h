@@ -36,3 +36,14 @@ int unset_bit(int num, int pos) {
 
 	return (num & mask);
 }
+
+
+int sum_xor_same(int n) {
+	int zero_count = 0;
+
+	while (n) {
+		if (n & 1 == 0)    zero_count++;
+		n >>= 1;
+	}
+	return 1 << zero_count;
+}
